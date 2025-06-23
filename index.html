@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body onload="defaultCountdown()">
+    <header> Focus Timer </header>
+
+    <main>
+        <div class="timer-container">
+            <svg class="progress-ring" width="200" height="200">
+                <circle class="progress-ring-circle" stroke="lightblue" stroke-width="10" fill="transparent" r="90" cx="100" cy="100" />
+            </svg>
+            <div class="countdown-display">
+                <div id="countdown-minutes">25</div>
+                <span>:</span>
+                <div id="countdown-secondes">00</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="bouton-container">
+        <button class="start" id="start" onclick="startCountdown()"> Start </button>
+        <button class="stop" id="stop"> Stop </button>
+        <button class="reset" id="reset"> Reset </button>
+    </div>
+    <script src="script/countdown.js"></script>
+</body>
+</html>
