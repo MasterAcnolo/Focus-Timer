@@ -15,7 +15,7 @@
     <main>
         <div class="timer-container">
             <svg class="progress-ring" width="200" height="200">
-                <circle class="progress-ring-circle" stroke="lightblue" stroke-width="10" fill="transparent" r="90"
+                <circle class="progress-ring-circle" stroke="gray" stroke-width="10" fill="transparent" r="90"
                     cx="100" cy="100" />
             </svg>
             <div class="countdown-display">
@@ -27,8 +27,23 @@
     </main>
 
     <div class="bouton-container">
-        <button class="start" id="start" onclick="startCountdown()"> Start </button>
-        <button class="stop" id="stop"> Stop </button>
+        <button class="start" id="start" onclick="startCountdown()">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <div class="front">
+                <span>Start</span>
+            </div>
+        </button>
+        <button class="stop" id="stop"> 
+            
+        <span class="shadow"></span>
+            <span class="edge"></span>
+            <div class="front">
+                <span>Stop</span>
+            </div>
+
+        </button>
+        
         <button class="reset" id="reset"> Reset </button>
     </div>
     <script src="script/countdown.js"></script>

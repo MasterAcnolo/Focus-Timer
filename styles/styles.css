@@ -1,37 +1,13 @@
-.progress-ring {
-  transform: rotate(-90deg); 
-}   
+@import url("components/progressring.css");
+@import url("components/display.css");
+@import url("components/button.css");
 
-.progress-ring-circle {
-  transition: stroke-dashoffset 1s linear;
-  stroke-dasharray: 326.73; /* 2πr = 2 * π * 52 = 326.73 */
-  stroke-dashoffset: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.timer-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-}
-
-.progress-ring {
-    transform: rotate(-90deg);
-}
-
-.progress-ring-circle {
-    transition: stroke-dashoffset 1s linear;
-    stroke-dasharray: 565.48; /* 2π * r (r = 90) */
-    stroke-dashoffset: 0;
-}
-
-.countdown-display {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 32px;
-    font-family: monospace;
-    display: flex;
-    gap: 5px;
+body{
+  background: url("../assets/images/whitebg2.webp");
+  background-size: cover;
 }

@@ -1,0 +1,26 @@
+.progress-ring {
+  transform: rotate(-90deg); 
+}   
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 1s linear;
+  stroke-dasharray: 326.73; /* 2πr = 2 * π * 52 = 326.73 */
+  stroke-dashoffset: 0;
+}
+
+.timer-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 1s linear;
+    stroke-dasharray: 565.48; /* 2π * r (r = 90) */
+    stroke-dashoffset: 0;
+}
