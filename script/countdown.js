@@ -1,5 +1,5 @@
 let minutes = 0;
-let secondes = 0;
+let secondes = 45;
 let intervalId = null;
 let isRunning = false;
 let isPaused = false;
@@ -17,6 +17,35 @@ const radius = 90;
 const circumference = 2 * Math.PI * radius;
 circle.style.strokeDasharray = circumference;
 
+// Formulaire de choix du temps
+const form = document.getElementById('time-form');
+const inputMin = document.getElementById('input-minutes');
+const inputSec = document.getElementById('input-secondes');
+if (form && inputMin && inputSec) {
+    const submitBtn = document.getElementById('set-time');
+    function setFormEnabled(enabled) {
+        inputMin.disabled = !enabled;
+        inputSec.disabled = !enabled;
+        if (submitBtn) submitBtn.disabled = !enabled;
+    }
+    form.addEventListener('submit', function(e) {
+        if (isRunning) {
+            e.preventDefault();
+            return;
+        }
+        e.preventDefault();
+        const min = parseInt(inputMin.value, 10) || 0;
+        const sec = parseInt(inputSec.value, 10) || 0;
+        minutes = Math.max(0, Math.min(99, min));
+        secondes = Math.max(0, Math.min(59, sec));
+        defaultCountdown();
+    });
+    // Initial state
+    setFormEnabled(true);
+    // Hook dans defaultCountdown et startCountdown pour activer/désactiver
+    window.setFormEnabled = setFormEnabled;
+//
+
 function updateDisplay() {
     textMin.textContent = String(minutes).padStart(2, '0');
     textSec.textContent = String(secondes).padStart(2, '0');
@@ -28,8 +57,7 @@ function setProgress(progress) {
 }
 
 function defaultCountdown() {
-    minutes = 0;
-    secondes = 45;
+    // minutes et secondes sont déjà définis par le formulaire ou par défaut
     updateDisplay();
     lastInitialSeconds = 0;
     setProgress(1);
@@ -41,7 +69,9 @@ function defaultCountdown() {
     startBtn.classList.remove('disabled');
     stopBtn.disabled = true;
     stopBtn.classList.add('disabled');
+    if (window.setFormEnabled) window.setFormEnabled(true);
     startBtn.focus();
+}
 }
 
 function startCountdown() {
@@ -62,6 +92,7 @@ function startCountdown() {
     startBtn.classList.add('disabled');
     stopBtn.disabled = false;
     stopBtn.classList.remove('disabled');
+    if (window.setFormEnabled) window.setFormEnabled(false);
     clearInterval(intervalId);
     intervalId = setInterval(() => {
         if (totalSecondsLeft <= 0) {
@@ -72,6 +103,7 @@ function startCountdown() {
             startBtn.classList.remove('disabled');
             stopBtn.disabled = true;
             stopBtn.classList.add('disabled');
+            if (window.setFormEnabled) window.setFormEnabled(true);
             startBtn.focus();
             pausedSecondsLeft = null;
             lastInitialSeconds = 0;
@@ -96,6 +128,7 @@ stopBtn.onclick = () => {
     startBtn.classList.remove('disabled');
     stopBtn.disabled = true;
     stopBtn.classList.add('disabled');
+    if (window.setFormEnabled) window.setFormEnabled(true);
     startBtn.focus();
 };
 resetBtn.onclick = defaultCountdown;
