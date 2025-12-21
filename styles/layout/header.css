@@ -10,6 +10,8 @@ header h1{
     justify-self: center;
 }
 
-header h2{
-    justify-self: center;
+@media (max-width:854px) {
+    #quote{
+        font-size: 50%;
+    }
 }

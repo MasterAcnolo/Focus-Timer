@@ -49,4 +49,11 @@ body{
     margin-top: 3vh !important;
     align-items: center;
   }
+  
+  .header-quote {
+    font-size: 0.95em !important;
+    line-height: 1.2;
+    padding: 0 0.5em;
+    text-align: center;
+  }
 }
