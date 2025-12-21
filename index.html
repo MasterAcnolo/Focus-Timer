@@ -2,23 +2,34 @@
 <html lang="en">
 
 <head>
+
+
+
+
+
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un minuteur de concentration simple et efficace.">
+    <meta name="author" content="Auteur du Focus Timer">
     <title>Focus Timer</title>
-
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body onload="defaultCountdown()">
-    <header> <h1>Focus Timer </h1></header>
+<body>
+    <header>
+        <h1>Focus Timer</h1>
+    </header>
 
     <main>
-        <div class="timer-container">
-            <svg class="progress-ring" width="200" height="200">
-                <circle class="progress-ring-circle" stroke="gray" stroke-width="10" fill="transparent" r="90"
-                    cx="100" cy="100" />
+        <div class="timer-container" role="timer" aria-live="polite">
+            <svg class="progress-ring" width="200" height="200" aria-hidden="true">
+                <circle class="progress-ring-circle" stroke="gray" stroke-width="10" fill="transparent" r="90" cx="100" cy="100" />
             </svg>
-            <div class="countdown-display">
+            <div class="countdown-display" aria-label="Temps restant">
                 <div id="countdown-minutes"></div>
                 <span>:</span>
                 <div id="countdown-secondes"></div>
@@ -26,29 +37,24 @@
         </div>
 
         <div class="bouton-container">
-            <button class="start" id="start" onclick="startCountdown()">
+            <button class="start" id="start" type="button" aria-label="Démarrer le minuteur">
                 <span class="shadow"></span>
                 <span class="edge"></span>
                 <div class="front">
                     <span>Start</span>
                 </div>
             </button>
-            <button class="stop" id="stop"> 
-                
-            <span class="shadow"></span>
+            <button class="stop" id="stop" type="button" aria-label="Arrêter le minuteur">
+                <span class="shadow"></span>
                 <span class="edge"></span>
                 <div class="front">
                     <span>Stop</span>
                 </div>
-
             </button>
-            
-            <button class="reset" id="reset"> Reset </button>
+            <button class="reset" id="reset" type="button" aria-label="Réinitialiser le minuteur">Reset</button>
         </div>
-
     </main>
-
-    <script src="script/countdown.js"></script>
+    <script src="script/countdown.js" defer></script>
 </body>
 
 </html>
