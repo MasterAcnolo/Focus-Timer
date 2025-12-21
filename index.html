@@ -10,15 +10,16 @@
     <title>Focus Timer</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles/styles.css">
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
-    <header>
-
+    <header data-aos="fade-down" data-aos-duration="900">
         <h1>Focus Timer</h1>
         <div id="quote" class="header-quote" style="margin-top:0.5em;font-size:1.1em;font-weight:400;opacity:0.85;"></div>
     </header>
-        <div class="timer-container" role="timer" aria-live="polite">
+        <div class="timer-container" role="timer" aria-live="polite" data-aos="zoom-in" data-aos-delay="400">
             <svg class="progress-ring" width="200" height="200" aria-hidden="true">
                 <circle class="progress-ring-circle" stroke="gray" stroke-width="10" fill="transparent" r="90" cx="100" cy="100" />
             </svg>
@@ -29,7 +30,7 @@
             </div>
         </div>
 
-        <div class="bouton-container">
+        <div class="bouton-container" data-aos="fade-up" data-aos-delay="600">
             <button class="start" id="start" type="button" aria-label="Démarrer le minuteur">
                 <span class="shadow"></span>
                 <span class="edge"></span>
@@ -47,7 +48,7 @@
             <button class="reset" id="reset" type="button" aria-label="Réinitialiser le minuteur">Reset</button>
         </div>
 
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center;" data-aos="fade-up" data-aos-delay="200">
             <form id="time-form" class="time-form" autocomplete="off">
                 <label for="input-minutes">Minutes :</label>
                 <input type="number" id="input-minutes" name="minutes" min="0" max="99" value="0" aria-label="Minutes">
@@ -59,6 +60,9 @@
 
     </main>
     <script src="script/countdown.js" defer></script>
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script>
         // Quotes system
         const quotes = [
