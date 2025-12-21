@@ -10,7 +10,7 @@
 </head>
 
 <body onload="defaultCountdown()">
-    <header> Focus Timer </header>
+    <header> <h1>Focus Timer </h1></header>
 
     <main>
         <div class="timer-container">
@@ -19,33 +19,35 @@
                     cx="100" cy="100" />
             </svg>
             <div class="countdown-display">
-                <div id="countdown-minutes">25</div>
+                <div id="countdown-minutes"></div>
                 <span>:</span>
-                <div id="countdown-secondes">00</div>
+                <div id="countdown-secondes"></div>
             </div>
         </div>
+
+        <div class="bouton-container">
+            <button class="start" id="start" onclick="startCountdown()">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <div class="front">
+                    <span>Start</span>
+                </div>
+            </button>
+            <button class="stop" id="stop"> 
+                
+            <span class="shadow"></span>
+                <span class="edge"></span>
+                <div class="front">
+                    <span>Stop</span>
+                </div>
+
+            </button>
+            
+            <button class="reset" id="reset"> Reset </button>
+        </div>
+
     </main>
 
-    <div class="bouton-container">
-        <button class="start" id="start" onclick="startCountdown()">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <div class="front">
-                <span>Start</span>
-            </div>
-        </button>
-        <button class="stop" id="stop"> 
-            
-        <span class="shadow"></span>
-            <span class="edge"></span>
-            <div class="front">
-                <span>Stop</span>
-            </div>
-
-        </button>
-        
-        <button class="reset" id="reset"> Reset </button>
-    </div>
     <script src="script/countdown.js"></script>
 </body>
 

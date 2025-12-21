@@ -1,0 +1,11 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-self: center;
+    margin-top: 15vh;
+}
+
+.bouton-container{
+    margin-top: 7vh;
+}

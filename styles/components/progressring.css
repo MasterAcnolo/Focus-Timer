@@ -1,11 +1,13 @@
 .progress-ring {
   transform: rotate(-90deg); 
+
 }   
 
 .progress-ring-circle {
   transition: stroke-dashoffset 1s linear;
   stroke-dasharray: 326.73; /* 2πr = 2 * π * 52 = 326.73 */
   stroke-dashoffset: 0;
+  stroke: rgb(223, 223, 223);
 }
 
 .timer-container {

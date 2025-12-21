@@ -1,5 +1,5 @@
-let minutes = 25;
-let secondes = 0;
+let minutes = 0;
+let secondes =  0;
 let intervalId = null;
 
 const circle = document.querySelector('.progress-ring-circle');
@@ -11,9 +11,12 @@ const circumference = 2 * Math.PI * radius;
 
 circle.style.strokeDasharray = circumference;
 
+textMin.textContent = String(minutes).padStart(2, '0');
+textSec.textContent = String(secondes).padStart(2, '0');
+
 function defaultCountdown() {
-    minutes = 25;
-    secondes = 0;
+    minutes = 0;
+    secondes = 45;
     updateDisplay();
     setProgress(1);
     clearInterval(intervalId);

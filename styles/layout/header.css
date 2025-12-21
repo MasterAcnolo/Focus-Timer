@@ -1,0 +1,9 @@
+header{
+    display: flex;
+    justify-self: center;
+    margin-top: 3vh;
+}
+
+header h1{
+    font-size: 4em;
+}

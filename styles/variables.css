@@ -1,0 +1,4 @@
+:root{
+    --default-text-color:#FFFFFF;
+    --default-background-color: linear-gradient(270deg, rgba(41, 41, 41, 1) 0%, rgba(31, 31, 31, 1) 100%);
+}
